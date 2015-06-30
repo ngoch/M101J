@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Sign Up</title>
+<style type="text/css">
+.label {
+	text-align: right
+}
+
+.error {
+	color: red
+}
+</style>
+
+</head>
+
+<body>
+	Already a user?
+	<a href="/login">Login</a>
+	<h2>Signup</h2>
+
+	<form action="#" th:action="@{/signup}" th:object="${user}"
+		method="post">
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" th:field="*{id}"></input></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"
+					th:field="*{password}"></input></td>
+			</tr>
+			<tr>
+				<td>Email (Optional)</td>
+				<td><input type="text" name="email"
+					th:field="*{email}"></input></td>
+			</tr>
+		</table>
+		<input type="submit"></input>
+	</form>
+</body>
+</html>
